@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="5">
+            <objects>
+                <viewController id="2" customClass="ViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3">
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="blackOpaque" translatesAutoresizingMaskIntoConstraints="NO" id="fl4-g5-fhN">
+                                <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="N69-YT-2bn"/>
+                                    <barButtonItem title="Graphic 1" id="Sqf-sO-hrU">
+                                        <connections>
+                                            <action selector="addGraphic1Action:" destination="2" id="8c6-kP-rQZ"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="Graphic 2" id="UzD-3w-omK">
+                                        <connections>
+                                            <action selector="addGraphic2Action:" destination="2" id="U9f-8a-3dA"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="wP7-4K-Qxk"/>
+                                </items>
+                            </toolbar>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UGq-Mp-wRw" customClass="AGSMapView">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
+                            <imageView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" image="ArcGIS.bundle/esri.png" translatesAutoresizingMaskIntoConstraints="NO" id="Npe-f6-tLz">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="64" id="FjK-Tt-Dvw"/>
+                                    <constraint firstAttribute="height" constant="32" id="fbF-bb-L29"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="UGq-Mp-wRw" firstAttribute="top" secondItem="fl4-g5-fhN" secondAttribute="bottom" type="default" id="E3g-X1-ZwQ"/>
+                            <constraint firstItem="UGq-Mp-wRw" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="SYZ-mK-IEM"/>
+                            <constraint firstItem="Npe-f6-tLz" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="eMx-rv-Lht"/>
+                            <constraint firstItem="UGq-Mp-wRw" firstAttribute="bottom" secondItem="3" secondAttribute="bottom" type="default" id="frX-DP-Qhe"/>
+                            <constraint firstItem="Npe-f6-tLz" firstAttribute="bottom" secondItem="3" secondAttribute="bottom" type="default" id="h5Y-ef-uRg"/>
+                            <constraint firstItem="fl4-g5-fhN" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="default" id="kQW-By-Cqd"/>
+                            <constraint firstItem="fl4-g5-fhN" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="lSh-hQ-VUS"/>
+                            <constraint firstItem="UGq-Mp-wRw" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="default" id="tWH-OA-xuS"/>
+                            <constraint firstItem="fl4-g5-fhN" firstAttribute="top" secondItem="3" secondAttribute="top" type="default" id="uLZ-tx-8Bv"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="UGq-Mp-wRw" id="X8V-o6-gad"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="ArcGIS.bundle/esri.png" width="16" height="16"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>

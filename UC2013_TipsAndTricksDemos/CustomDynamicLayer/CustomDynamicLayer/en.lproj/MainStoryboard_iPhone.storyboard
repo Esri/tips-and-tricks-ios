@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="5">
+            <objects>
+                <viewController id="2" customClass="ViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3">
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b1t-BD-2h1" customClass="AGSMapView">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
+                            <imageView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" image="ArcGIS.bundle/esri.png" translatesAutoresizingMaskIntoConstraints="NO" id="czG-aT-8Co">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="GUL-9V-Gac"/>
+                                    <constraint firstAttribute="width" constant="64" id="Vdm-8j-Xv0"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="b1t-BD-2h1" firstAttribute="top" secondItem="3" secondAttribute="top" type="default" id="2Rs-3y-nAw"/>
+                            <constraint firstItem="b1t-BD-2h1" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="default" id="Dfh-wt-Au9"/>
+                            <constraint firstItem="b1t-BD-2h1" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="Uhx-hC-Iej"/>
+                            <constraint firstItem="b1t-BD-2h1" firstAttribute="bottom" secondItem="3" secondAttribute="bottom" type="default" id="Y7P-Zs-fWu"/>
+                            <constraint firstItem="czG-aT-8Co" firstAttribute="bottom" secondItem="3" secondAttribute="bottom" type="default" id="ZDN-YR-hNu"/>
+                            <constraint firstItem="czG-aT-8Co" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="uPr-gh-ctE"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="b1t-BD-2h1" id="jRY-ae-tcN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="51" y="20"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="ArcGIS.bundle/esri.png" width="16" height="16"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>

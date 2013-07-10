@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="5">
+            <objects>
+                <viewController id="2" customClass="ViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3">
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0tT-zb-8ie" customClass="AGSMapView">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="blackOpaque" translatesAutoresizingMaskIntoConstraints="NO" id="T4k-V5-3BD">
+                                <items>
+                                    <barButtonItem style="plain" id="tsJ-Bd-MXP">
+                                        <textField key="customView" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Freehand Sketch:" minimumFontSize="17" id="tU1-0c-vhk">
+                                            <rect key="frame" x="12" y="7" width="112" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                        </textField>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" id="hYe-BI-Hp2">
+                                        <segmentedControl key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="1" id="uBj-d4-gMY">
+                                            <rect key="frame" x="134" y="7" width="69" height="32"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <segments>
+                                                <segment title="On"/>
+                                                <segment title="Off"/>
+                                            </segments>
+                                            <connections>
+                                                <action selector="toggleFreehandSketchAction:" destination="2" eventType="valueChanged" id="r3e-AG-aAl"/>
+                                            </connections>
+                                        </segmentedControl>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="72e-Sa-vWi"/>
+                                    <barButtonItem enabled="NO" image="clear.png" id="6vA-nk-fXY">
+                                        <connections>
+                                            <action selector="clearAction:" destination="2" id="4Zk-VF-e1d"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <imageView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" image="ArcGIS.bundle/esri.png" translatesAutoresizingMaskIntoConstraints="NO" id="Dg7-9l-eVL">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="3Vy-Tj-irp"/>
+                                    <constraint firstAttribute="width" constant="64" id="x1y-VS-wvF"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="0tT-zb-8ie" firstAttribute="top" secondItem="T4k-V5-3BD" secondAttribute="bottom" type="default" id="2Tm-Uf-ptX"/>
+                            <constraint firstItem="0tT-zb-8ie" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="9ft-Id-UK1"/>
+                            <constraint firstItem="Dg7-9l-eVL" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="DNK-dS-Dn4"/>
+                            <constraint firstItem="0tT-zb-8ie" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="default" id="Oty-9e-Dq4"/>
+                            <constraint firstItem="T4k-V5-3BD" firstAttribute="top" secondItem="3" secondAttribute="top" type="default" id="koR-yq-Jau"/>
+                            <constraint firstItem="0tT-zb-8ie" firstAttribute="bottom" secondItem="3" secondAttribute="bottom" type="default" id="mQF-YE-qbP"/>
+                            <constraint firstItem="Dg7-9l-eVL" firstAttribute="bottom" secondItem="3" secondAttribute="bottom" type="default" id="tcW-lN-3cv"/>
+                            <constraint firstItem="T4k-V5-3BD" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="default" id="uh7-5i-cMy"/>
+                            <constraint firstItem="T4k-V5-3BD" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="zm0-sr-fVX"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="clearButton" destination="6vA-nk-fXY" id="jDI-VI-r76"/>
+                        <outlet property="freehandSketchControl" destination="uBj-d4-gMY" id="Fby-Uo-ICf"/>
+                        <outlet property="mapView" destination="0tT-zb-8ie" id="bt0-rf-HID"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="ArcGIS.bundle/esri.png" width="16" height="16"/>
+        <image name="clear.png" width="16" height="16"/>
+    </resources>
+    <classes>
+        <class className="AGSMapView" superclassName="AGSMapViewBase">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AGSMapView.h"/>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="ViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="addGraphic1Action:"/>
+                <relationship kind="action" name="addGraphic2Action:"/>
+                <relationship kind="action" name="clearAction:"/>
+                <relationship kind="action" name="toggleFreehandSketchAction:"/>
+                <relationship kind="outlet" name="clearButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="freehandSketchControl" candidateClass="UISegmentedControl"/>
+                <relationship kind="outlet" name="mapView" candidateClass="AGSMapView"/>
+            </relationships>
+        </class>
+    </classes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>
