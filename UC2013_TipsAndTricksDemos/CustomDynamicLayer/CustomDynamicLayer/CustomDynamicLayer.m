@@ -58,7 +58,7 @@
     
     // only draw if the requested envelope intersects the envelope of the
     // georeferenced image
-    if (![env intersectionWithEnvelope:self.fullEnvelope]){
+    if (![env intersectsWithEnvelope:self.fullEnvelope]){
         return;
     }
     
