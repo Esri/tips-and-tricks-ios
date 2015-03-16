@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GLRenderModesVC" customModule="TipsAndTricks_DevSummit2015" customModuleProvider="target">
+            <connections>
+                <outlet property="mapView" destination="E8T-hS-hVK" id="aeT-Tf-DsA"/>
+                <outlet property="view" destination="l0W-Hm-wPc" id="oaS-dK-GCE"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="l0W-Hm-wPc">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E8T-hS-hVK" customClass="AGSMapView">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="556"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Fd-n8-GGI">
+                    <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                    <items>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="wxV-4a-7WI"/>
+                        <barButtonItem style="plain" id="RUD-pe-LBP">
+                            <switch key="customView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="LwK-DX-efv">
+                                <rect key="frame" x="-25" y="-15" width="51" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="toggleRenderMode:" destination="-1" eventType="valueChanged" id="VlW-Jf-4DQ"/>
+                                </connections>
+                            </switch>
+                        </barButtonItem>
+                        <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="a2p-Fo-hQR"/>
+                    </items>
+                </toolbar>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="E8T-hS-hVK" firstAttribute="leading" secondItem="l0W-Hm-wPc" secondAttribute="leading" id="3O5-R8-iHs"/>
+                <constraint firstItem="E8T-hS-hVK" firstAttribute="trailing" secondItem="5Fd-n8-GGI" secondAttribute="trailing" id="3dH-w6-mw0"/>
+                <constraint firstItem="5Fd-n8-GGI" firstAttribute="top" secondItem="E8T-hS-hVK" secondAttribute="bottom" id="46L-2n-hAI"/>
+                <constraint firstItem="E8T-hS-hVK" firstAttribute="top" secondItem="l0W-Hm-wPc" secondAttribute="top" id="70p-DL-sQW"/>
+                <constraint firstAttribute="trailing" secondItem="5Fd-n8-GGI" secondAttribute="trailing" id="CFr-50-Vqy"/>
+                <constraint firstAttribute="bottom" secondItem="5Fd-n8-GGI" secondAttribute="bottom" id="Zzt-G1-c7E"/>
+                <constraint firstItem="E8T-hS-hVK" firstAttribute="leading" secondItem="5Fd-n8-GGI" secondAttribute="leading" id="qRE-Mz-ee3"/>
+            </constraints>
+        </view>
+    </objects>
+</document>

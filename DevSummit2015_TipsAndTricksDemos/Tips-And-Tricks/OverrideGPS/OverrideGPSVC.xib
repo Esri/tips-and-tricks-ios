@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="OverrideGPSVC" customModule="TipsAndTricks_DevSummit2015" customModuleProvider="target">
+            <connections>
+                <outlet property="mapView" destination="JX9-T8-eVA" id="h2Z-Od-5oW"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JX9-T8-eVA" userLabel="map view" customClass="AGSMapView">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="524"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                </view>
+                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="i4r-kD-pMX">
+                    <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                    <items>
+                        <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="upR-iB-IJr"/>
+                        <barButtonItem title="Start GPS" id="vsf-RM-TOm" userLabel="startStopButton">
+                            <connections>
+                                <action selector="startStopAction:" destination="-1" id="9Xo-lo-XKM"/>
+                            </connections>
+                        </barButtonItem>
+                    </items>
+                </toolbar>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="i4r-kD-pMX" firstAttribute="leading" secondItem="JX9-T8-eVA" secondAttribute="leading" id="0hn-M7-hqk"/>
+                <constraint firstItem="JX9-T8-eVA" firstAttribute="trailing" secondItem="i4r-kD-pMX" secondAttribute="trailing" id="7LP-8Q-lfG"/>
+                <constraint firstAttribute="trailing" secondItem="i4r-kD-pMX" secondAttribute="trailing" id="9Ny-KF-Bj5"/>
+                <constraint firstItem="i4r-kD-pMX" firstAttribute="top" secondItem="JX9-T8-eVA" secondAttribute="bottom" id="Tmk-jM-4gh"/>
+                <constraint firstItem="JX9-T8-eVA" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Wop-c2-VWH"/>
+                <constraint firstAttribute="bottom" secondItem="i4r-kD-pMX" secondAttribute="bottom" id="fCZ-1C-QQ3"/>
+                <constraint firstItem="JX9-T8-eVA" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="rdM-RJ-SW2"/>
+            </constraints>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="7LP-8Q-lfG"/>
+                    <exclude reference="Wop-c2-VWH"/>
+                    <exclude reference="rdM-RJ-SW2"/>
+                    <exclude reference="0hn-M7-hqk"/>
+                    <exclude reference="9Ny-KF-Bj5"/>
+                    <exclude reference="Tmk-jM-4gh"/>
+                    <exclude reference="fCZ-1C-QQ3"/>
+                </mask>
+            </variation>
+            <variation key="widthClass=compact">
+                <mask key="constraints">
+                    <include reference="7LP-8Q-lfG"/>
+                    <include reference="Wop-c2-VWH"/>
+                    <include reference="rdM-RJ-SW2"/>
+                    <include reference="0hn-M7-hqk"/>
+                    <include reference="9Ny-KF-Bj5"/>
+                    <include reference="Tmk-jM-4gh"/>
+                    <include reference="fCZ-1C-QQ3"/>
+                </mask>
+            </variation>
+        </view>
+    </objects>
+</document>

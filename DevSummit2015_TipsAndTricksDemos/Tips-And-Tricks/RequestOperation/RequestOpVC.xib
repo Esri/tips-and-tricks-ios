@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RequestOpVC">
+            <connections>
+                <outlet property="bytesLabel" destination="BBr-As-Kbv" id="6ar-fB-tCx"/>
+                <outlet property="progressLabel" destination="K7S-CP-iwM" id="EQO-Ma-65m"/>
+                <outlet property="progressView" destination="DIk-B8-p3w" id="wek-QE-GEI"/>
+                <outlet property="view" destination="1" id="3"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="1">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="DIk-B8-p3w">
+                    <rect key="frame" x="20" y="141" width="280" height="2"/>
+                </progressView>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K7S-CP-iwM">
+                    <rect key="frame" x="127" y="165" width="67" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="67" id="m0M-Kp-7dr"/>
+                        <constraint firstAttribute="height" constant="21" id="p3O-P0-y4h"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wXO-pX-sHC">
+                    <rect key="frame" x="145" y="261" width="30" height="30"/>
+                    <state key="normal" title="Go!">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="startDownload:" destination="-1" eventType="touchUpInside" id="AhO-CC-CPb"/>
+                    </connections>
+                </button>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BBr-As-Kbv">
+                    <rect key="frame" x="58" y="96" width="204" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="76G-0n-xOO"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="DIk-B8-p3w" firstAttribute="top" secondItem="BBr-As-Kbv" secondAttribute="bottom" constant="24" id="50V-YW-n5E"/>
+                <constraint firstItem="BBr-As-Kbv" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="58" id="FWN-eq-djV"/>
+                <constraint firstItem="wXO-pX-sHC" firstAttribute="top" secondItem="K7S-CP-iwM" secondAttribute="bottom" constant="75" id="L3H-NH-GTI"/>
+                <constraint firstItem="BBr-As-Kbv" firstAttribute="top" secondItem="1" secondAttribute="top" constant="96" id="MMl-MA-Gef"/>
+                <constraint firstItem="K7S-CP-iwM" firstAttribute="top" secondItem="DIk-B8-p3w" secondAttribute="bottom" constant="22" id="SHv-XA-u2c"/>
+                <constraint firstItem="wXO-pX-sHC" firstAttribute="centerX" secondItem="K7S-CP-iwM" secondAttribute="centerX" id="cpd-Gj-h5B"/>
+                <constraint firstItem="DIk-B8-p3w" firstAttribute="centerX" secondItem="K7S-CP-iwM" secondAttribute="centerX" id="fUc-SA-Ehi"/>
+                <constraint firstItem="BBr-As-Kbv" firstAttribute="centerX" secondItem="DIk-B8-p3w" secondAttribute="centerX" id="gQ2-BJ-Ysp"/>
+                <constraint firstItem="DIk-B8-p3w" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="20" id="t2s-Zb-NRb"/>
+                <constraint firstItem="BBr-As-Kbv" firstAttribute="centerX" secondItem="1" secondAttribute="centerX" id="tNn-3v-qSe"/>
+            </constraints>
+        </view>
+    </objects>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SetMaxEnvVC" customModule="TipsAndTricks_DevSummit2015" customModuleProvider="target">
+            <connections>
+                <outlet property="mapView" destination="nuD-ci-RNo" id="ydv-S0-Hzo"/>
+                <outlet property="view" destination="CK5-nk-Srg" id="hBv-VY-y0j"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="CK5-nk-Srg">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nuD-ci-RNo" customClass="AGSMapView">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="524"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fGa-43-PHy">
+                    <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                    <items>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="jgx-d6-Ipl"/>
+                        <barButtonItem style="plain" id="PuJ-Hk-VjB">
+                            <switch key="customView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="WFd-Bv-i5P">
+                                <rect key="frame" x="-25" y="-15" width="51" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="toggleMaxEnv:" destination="-1" eventType="valueChanged" id="Az2-Tg-agD"/>
+                                </connections>
+                            </switch>
+                        </barButtonItem>
+                        <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="muY-NN-cLT"/>
+                    </items>
+                </toolbar>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="nuD-ci-RNo" firstAttribute="leading" secondItem="fGa-43-PHy" secondAttribute="leading" id="Bxq-LU-M3W"/>
+                <constraint firstAttribute="trailing" secondItem="fGa-43-PHy" secondAttribute="trailing" id="EeR-uA-FGx"/>
+                <constraint firstItem="fGa-43-PHy" firstAttribute="top" secondItem="nuD-ci-RNo" secondAttribute="bottom" id="H3k-DY-j62"/>
+                <constraint firstItem="nuD-ci-RNo" firstAttribute="top" secondItem="CK5-nk-Srg" secondAttribute="top" id="YKZ-TN-8jI"/>
+                <constraint firstItem="nuD-ci-RNo" firstAttribute="leading" secondItem="CK5-nk-Srg" secondAttribute="leading" id="fUP-Pt-3Da"/>
+                <constraint firstItem="nuD-ci-RNo" firstAttribute="trailing" secondItem="fGa-43-PHy" secondAttribute="trailing" id="oBb-nr-5cF"/>
+                <constraint firstAttribute="bottom" secondItem="fGa-43-PHy" secondAttribute="bottom" id="s8F-qf-Oev"/>
+            </constraints>
+        </view>
+    </objects>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>

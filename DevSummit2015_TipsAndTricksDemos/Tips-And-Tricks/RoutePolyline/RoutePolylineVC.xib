@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RoutePolylineVC" customModule="TipsAndTricks_DevSummit2015" customModuleProvider="target">
+            <connections>
+                <outlet property="fromAddressBar" destination="rUS-V1-Bif" id="5cA-la-Sik"/>
+                <outlet property="mapView" destination="wU1-j8-09q" id="mwX-T2-mOT"/>
+                <outlet property="startStopButton" destination="0gX-CI-WBn" id="Fcn-Rc-tiz"/>
+                <outlet property="toAddressBar" destination="bL4-FE-I10" id="1u9-fM-bvg"/>
+                <outlet property="view" destination="iN0-l3-epB" id="BY8-ko-RlT"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BX9-tx-fr7" userLabel="Address">
+                    <rect key="frame" x="0.0" y="555" width="600" height="45"/>
+                    <subviews>
+                        <searchBar contentMode="redraw" text="277 N Avenida Caballeros, Palm Springs, CA 92262" translatesAutoresizingMaskIntoConstraints="NO" id="bL4-FE-I10" userLabel="To Address">
+                            <rect key="frame" x="275" y="0.0" width="275" height="44"/>
+                            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                            <color key="barTintColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                            <textInputTraits key="textInputTraits" autocorrectionType="no"/>
+                        </searchBar>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0gX-CI-WBn">
+                            <rect key="frame" x="549" y="0.0" width="51" height="44"/>
+                            <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="51" id="PBP-4E-XYk"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                            <state key="normal" title="Go">
+                                <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="startStopAction:" destination="-1" eventType="touchUpInside" id="NVH-uK-DhS"/>
+                            </connections>
+                        </button>
+                        <searchBar contentMode="redraw" text="380 New York St, Redlands, CA, 92373" translatesAutoresizingMaskIntoConstraints="NO" id="rUS-V1-Bif" userLabel="From Address">
+                            <rect key="frame" x="0.0" y="0.0" width="275" height="44"/>
+                            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                            <color key="barTintColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                            <textInputTraits key="textInputTraits" autocorrectionType="no"/>
+                        </searchBar>
+                    </subviews>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="0gX-CI-WBn" firstAttribute="top" secondItem="BX9-tx-fr7" secondAttribute="top" id="3uN-cQ-5PM"/>
+                        <constraint firstItem="rUS-V1-Bif" firstAttribute="top" secondItem="BX9-tx-fr7" secondAttribute="top" id="4Kc-U8-QXU"/>
+                        <constraint firstItem="rUS-V1-Bif" firstAttribute="width" secondItem="bL4-FE-I10" secondAttribute="width" id="A8D-OA-3y7"/>
+                        <constraint firstItem="bL4-FE-I10" firstAttribute="leading" secondItem="rUS-V1-Bif" secondAttribute="trailing" id="B0p-Hp-M2h"/>
+                        <constraint firstItem="0gX-CI-WBn" firstAttribute="leading" secondItem="bL4-FE-I10" secondAttribute="trailing" constant="-1" id="IzO-fX-vLI"/>
+                        <constraint firstItem="rUS-V1-Bif" firstAttribute="centerY" secondItem="BX9-tx-fr7" secondAttribute="centerY" id="c5L-WI-IdG"/>
+                        <constraint firstItem="rUS-V1-Bif" firstAttribute="top" secondItem="bL4-FE-I10" secondAttribute="top" id="g0F-3c-lPj"/>
+                        <constraint firstAttribute="trailing" secondItem="0gX-CI-WBn" secondAttribute="trailing" id="oew-Gc-SNn"/>
+                        <constraint firstAttribute="bottom" secondItem="0gX-CI-WBn" secondAttribute="bottom" constant="1" id="wjT-KA-DFb"/>
+                        <constraint firstItem="rUS-V1-Bif" firstAttribute="leading" secondItem="BX9-tx-fr7" secondAttribute="leading" id="xCL-Y4-2wQ"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wU1-j8-09q" customClass="AGSMapView">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="555"/>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="wU1-j8-09q" secondAttribute="trailing" id="3So-6X-QW5"/>
+                <constraint firstItem="BX9-tx-fr7" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="MTM-hh-B5v"/>
+                <constraint firstAttribute="bottom" secondItem="BX9-tx-fr7" secondAttribute="bottom" id="OPv-dr-UKy"/>
+                <constraint firstItem="BX9-tx-fr7" firstAttribute="leading" secondItem="wU1-j8-09q" secondAttribute="leading" id="Qqz-Yu-8V1"/>
+                <constraint firstItem="wU1-j8-09q" firstAttribute="trailing" secondItem="BX9-tx-fr7" secondAttribute="trailing" id="TQf-Sh-XG2"/>
+                <constraint firstItem="wU1-j8-09q" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="dxy-30-pvs"/>
+                <constraint firstItem="BX9-tx-fr7" firstAttribute="top" secondItem="wU1-j8-09q" secondAttribute="bottom" id="sgp-2U-9RT"/>
+            </constraints>
+        </view>
+    </objects>
+</document>

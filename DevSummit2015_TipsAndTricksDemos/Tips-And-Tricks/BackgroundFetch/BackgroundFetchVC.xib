@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BackgroundFetchVC" customModule="TipsAndTricks_DevSummit2015" customModuleProvider="target">
+            <connections>
+                <outlet property="downloadButton" destination="mK1-CQ-keq" id="7Fr-zT-7Zo"/>
+                <outlet property="mapView" destination="jB4-4d-cKA" id="q12-AX-IZ9"/>
+                <outlet property="view" destination="GL9-es-Opg" id="EMC-EY-vTi"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="GL9-es-Opg">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jB4-4d-cKA" customClass="AGSMapView">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="556"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IaX-KF-GMs">
+                    <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                    <items>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="7sh-iL-YTv"/>
+                        <barButtonItem title="Download Area" id="mK1-CQ-keq">
+                            <connections>
+                                <action selector="downloadBtnClicked" destination="-1" id="7cv-U8-B3c"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="TL0-WI-lpB"/>
+                    </items>
+                </toolbar>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="jB4-4d-cKA" firstAttribute="trailing" secondItem="IaX-KF-GMs" secondAttribute="trailing" id="Alu-ok-fgF"/>
+                <constraint firstItem="jB4-4d-cKA" firstAttribute="top" secondItem="GL9-es-Opg" secondAttribute="top" id="CI9-p1-GG5"/>
+                <constraint firstItem="jB4-4d-cKA" firstAttribute="leading" secondItem="IaX-KF-GMs" secondAttribute="leading" id="GSz-Xc-GX1"/>
+                <constraint firstAttribute="bottom" secondItem="IaX-KF-GMs" secondAttribute="bottom" id="pCk-tR-qQ3"/>
+                <constraint firstItem="jB4-4d-cKA" firstAttribute="leading" secondItem="GL9-es-Opg" secondAttribute="leading" id="wXT-a3-0yX"/>
+                <constraint firstAttribute="trailing" secondItem="IaX-KF-GMs" secondAttribute="trailing" id="yfh-bW-A2N"/>
+                <constraint firstItem="IaX-KF-GMs" firstAttribute="top" secondItem="jB4-4d-cKA" secondAttribute="bottom" id="zRT-us-B7X"/>
+            </constraints>
+        </view>
+    </objects>
+</document>
