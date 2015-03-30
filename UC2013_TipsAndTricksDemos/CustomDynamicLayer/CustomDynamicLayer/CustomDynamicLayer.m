@@ -16,7 +16,9 @@
 
 #import "CustomDynamicLayer.h"
 
-@interface CustomDynamicLayer ()
+@interface CustomDynamicLayer (){
+    BOOL _hasDrawn;
+}
 @property (nonatomic, strong, readwrite) AGSEnvelope *fullEnvelope;
 @property (nonatomic, strong, readwrite) AGSSpatialReference *spatialReference;
 @end
@@ -37,21 +39,39 @@
     return self;
 }
 
+-(void)mapDidUpdate:(AGSMapUpdateType)updateType{
+    // this handles if the layer gets added to another map
+    if (updateType == AGSMapUpdateTypeLayerAdded){
+        _hasDrawn = NO;
+    }
+}
+
 #pragma mark - Request Image
 
--(void)requestImageWithWidth:(NSInteger)width height:(NSInteger)height envelope:(AGSEnvelope*)env timeExtent:(AGSTimeExtent*)timeExtent {    
+-(void)requestImageWithWidth:(NSInteger)width height:(NSInteger)height envelope:(AGSEnvelope*)env timeExtent:(AGSTimeExtent*)timeExtent {
     
-    // get an image
+    // no longer need to do anything once we've drawn
+    // the map control will keep the last image around
+    if (_hasDrawn){
+        return;
+    }
+    
+    // only draw if the requested envelope intersects the envelope of the
+    // georeferenced image
+    if (![env intersectsWithEnvelope:self.fullEnvelope]){
+        return;
+    }
+    
+    // match spatial reference
+    if (self.spatialReference && ![self.spatialReference isEqualToSpatialReference:env.spatialReference]){
+        return;
+    }
+    
+    // draw once
     UIImage *img = [UIImage imageNamed:@"esri_campus"];
+    [self setImageData:UIImagePNGRepresentation(img) forEnvelope:self.fullEnvelope];
+    _hasDrawn = YES;
     
-    // if request envelope instersect with full envelope 
-    // of layer then only set image data
-    if ([env intersectsWithEnvelope:self.fullEnvelope]) {
-        [self setImageData:UIImagePNGRepresentation(img) forEnvelope:self.fullEnvelope];       
-    }
-    else {
-        [self setImageData:nil forEnvelope:self.fullEnvelope];
-    }
 }
 
 @end
