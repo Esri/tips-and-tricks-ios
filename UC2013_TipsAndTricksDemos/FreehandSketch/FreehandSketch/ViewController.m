@@ -15,7 +15,7 @@
  */
 
 #import "ViewController.h"
-#define kTiledMapServiceURL @"http://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer"
+#define kTiledMapServiceURL @"https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer"
 
 @interface ViewController ()
 
